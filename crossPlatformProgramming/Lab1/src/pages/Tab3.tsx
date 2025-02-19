@@ -92,7 +92,9 @@ const Tab2: React.FC = () => {
                                     const formattedNum = formatNumber(num);
                                     const isMinElement =
                                        minElement !== null &&
-                                       num === minElement;
+                                       num === minElement &&
+                                       rowIndex === colIndex;
+
                                     const isDiagonal = rowIndex === colIndex;
 
                                     return (
