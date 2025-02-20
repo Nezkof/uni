@@ -1,0 +1,8 @@
+.bullet-point::before {
+   content: "•";
+   color: black;
+   position: absolute;
+   font-size: 20px;
+   margin-right: 10px;
+   top: 50%;
+}

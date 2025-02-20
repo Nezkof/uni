@@ -17,15 +17,12 @@ import { ellipse, square, triangle } from "ionicons/icons";
 import Tab1 from "./pages/Tab1";
 import Tab2 from "./pages/Tab2";
 
-/* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 
-/* Basic CSS for apps built with Ionic */
 import "@ionic/react/css/normalize.css";
 import "@ionic/react/css/structure.css";
 import "@ionic/react/css/typography.css";
 
-/* Optional CSS utils that can be commented out */
 import "@ionic/react/css/padding.css";
 import "@ionic/react/css/float-elements.css";
 import "@ionic/react/css/text-alignment.css";
@@ -50,6 +47,7 @@ import { useEffect } from "react";
 
 import Header from "./components/Header/header";
 import Tab3 from "./pages/Tab3";
+import Tab4 from "./pages/tab4/Tab4";
 
 setupIonicReact();
 
@@ -67,6 +65,9 @@ const MainContent: React.FC = () => {
                <Route exact path="/tab3">
                   <Tab3 />
                </Route>
+               <Route exact path="/tab4">
+                  <Tab4 />
+               </Route>
                <Route exact path="/">
                   <Redirect to="/tab1" />
                </Route>
@@ -83,6 +84,10 @@ const MainContent: React.FC = () => {
                <IonTabButton tab="tab3" href="/tab3">
                   <IonIcon aria-hidden="true" icon={ellipse} />
                   <IonLabel>Task #3</IonLabel>
+               </IonTabButton>
+               <IonTabButton tab="tab4" href="/tab4">
+                  <IonIcon aria-hidden="true" icon={triangle} />
+                  <IonLabel>Lab #2</IonLabel>
                </IonTabButton>
             </IonTabBar>
          </IonTabs>
