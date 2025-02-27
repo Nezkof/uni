@@ -52,7 +52,7 @@ const TaskList: React.FC<iTaskList> = ({ tasks }) => {
       labels: Object.keys(groupedTasks),
       datasets: [
          {
-            label: "Number of Tasks",
+            label: "Кількість завдань",
             data: Object.values(groupedTasks).map((group) => group.length),
             backgroundColor: "rgba(75, 192, 192, 0.6)",
             borderColor: "rgba(75, 192, 192, 1)",

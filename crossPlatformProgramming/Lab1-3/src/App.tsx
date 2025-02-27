@@ -16,6 +16,7 @@ import { IonReactRouter } from "@ionic/react-router";
 import { ellipse, square, triangle } from "ionicons/icons";
 import Tab1 from "./pages/Tab1";
 import Tab2 from "./pages/Tab2";
+import Tab5 from "./pages/tab5/Tab5";
 
 import "@ionic/react/css/core.css";
 
@@ -68,6 +69,9 @@ const MainContent: React.FC = () => {
                <Route exact path="/tab4">
                   <Tab4 />
                </Route>
+               <Route exact path="/tab5">
+                  <Tab5 />
+               </Route>
                <Route exact path="/">
                   <Redirect to="/tab1" />
                </Route>
@@ -88,6 +92,10 @@ const MainContent: React.FC = () => {
                <IonTabButton tab="tab4" href="/tab4">
                   <IonIcon aria-hidden="true" icon={triangle} />
                   <IonLabel>Lab #2</IonLabel>
+               </IonTabButton>
+               <IonTabButton tab="tab5" href="/tab5">
+                  <IonIcon aria-hidden="true" icon={triangle} />
+                  <IonLabel>Lab #3</IonLabel>
                </IonTabButton>
             </IonTabBar>
          </IonTabs>
