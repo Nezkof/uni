@@ -1,14 +1,32 @@
-const { defineConfig } = require("karma");
-
-module.exports = defineConfig({
-   frameworks: ["jasmine"],
-   files: ["src/**/*.test.js"],
-   preprocessors: {
-      "src/**/*.test.js": ["webpack", "sourcemap"],
-   },
-   webpack: require("./webpack.config.js"),
-   reporters: ["progress", "kjhtml"],
-   browsers: ["ChromeHeadless"],
-   singleRun: true,
-   concurrency: Infinity,
-});
+module.exports = function (config) {
+   config.set({
+      frameworks: ["jasmine"],
+      files: ["test/**/*.spec.tsx"],
+      preprocessors: {
+         "test/**/*.spec.tsx": ["webpack", "sourcemap"],
+      },
+      webpack: {
+         mode: "development",
+         resolve: {
+            extensions: [".ts", ".tsx", ".js", ".jsx"],
+         },
+         module: {
+            rules: [
+               {
+                  test: /\.tsx?$/,
+                  exclude: /node_modules/,
+                  use: {
+                     loader: "ts-loader",
+                     options: {
+                        transpileOnly: true,
+                     },
+                  },
+               },
+            ],
+         },
+      },
+      browsers: ["Chrome"],
+      reporters: ["progress"],
+      singleRun: true,
+   });
+};

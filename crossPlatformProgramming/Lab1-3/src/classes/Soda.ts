@@ -8,6 +8,7 @@ class Soda extends Drink {
       public sugarContent: number
    ) {
       super(name, volume, calories);
+      if (sugarContent < 0) throw new Error("Sugar content cannot be negative");
    }
 
    displayInfo(): string {

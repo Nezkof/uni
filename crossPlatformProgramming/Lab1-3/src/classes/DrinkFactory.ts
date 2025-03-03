@@ -1,6 +1,7 @@
 import Drink from "./abstract/Drink";
 import Juice from "./Juice";
 import Soda from "./Soda";
+import Tea from "./Tea";
 
 class DrinkFactory {
    static createDrink(item: any): Drink {
@@ -18,6 +19,8 @@ class DrinkFactory {
             item.calories,
             item.sugarContent
          );
+      } else if (item.type === "tea") {
+         return new Tea(item.name, item.volume, item.calories, item.teaType);
       } else {
          throw new Error("Unknown beverage type");
       }
