@@ -1,0 +1,7 @@
+{
+  "name": "Lab5",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

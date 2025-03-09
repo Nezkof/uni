@@ -1,0 +1,43 @@
+<ion-content fullscreen>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання:</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ul>
+        <li>Розробити сервіс для табулювання функції</li>
+        <li>
+          Розробити сервіс для розрахунку значень функції за допомогою ряду
+        </li>
+        <li>
+          Розробити сервіс для розрахунку значень функції за допомогою рекурсії
+        </li>
+        <li>
+          Розробити сервіс для логування обчислених значень у консоль та
+          використати його у попередніх трьох сервісах
+        </li>
+        <li>
+          У основному застосунку підключити сервіси, вивести результати усіх
+          розрахунків та побудувати графіки для усіх обрахунків.
+        </li>
+        <li>Функція: (x² - 1)⁻¹</li>
+        <li>Ряд: 1 + x² + x⁴ + x⁶</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-content fullscreen>
+    <ion-card *ngFor="let result of results">
+      <ion-card-header>
+        <ion-card-title>x = {{ result.x }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ul>
+          <li>Табуляція: {{ result.tabulation }}</li>
+          <li>Розрахунок ряду: {{ result.series }}</li>
+          <li>Рекурсія: {{ result.recursion }}</li>
+        </ul>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-content>
