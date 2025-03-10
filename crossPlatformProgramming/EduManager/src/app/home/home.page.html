@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Educational Services</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let service of services">
+    <ion-card-header>
+      <ion-card-title>{{service.getTitle()}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content [innerHTML]="service.getDetails()"></ion-card-content>
+  </ion-card>
+</ion-content>
