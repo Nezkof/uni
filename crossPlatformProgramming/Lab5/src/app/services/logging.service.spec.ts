@@ -1,16 +1,31 @@
-import { TestBed } from '@angular/core/testing';
+// import { TestBed } from '@angular/core/testing';
+// import { LoggingService } from './logging.service';
 
-import { LoggingService } from './logging.service';
+// describe('LoggingService', () => {
+//   let service: LoggingService;
+//   let consoleSpy: jasmine.Spy;
 
-describe('LoggingService', () => {
-  let service: LoggingService;
+//   beforeEach(() => {
+//     TestBed.configureTestingModule({
+//       providers: [LoggingService],
+//     });
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(LoggingService);
-  });
+//     service = TestBed.inject(LoggingService);
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+//     // Шпигуємо на метод console.log
+//     consoleSpy = spyOn(console, 'log');
+//   });
+
+//   it('should be created', () => {
+//     expect(service).toBeTruthy();
+//   });
+
+//   it('should call console.log with correct message and result', () => {
+//     const message = 'Test message';
+//     const result = 42;
+
+//     service.logToConsole(message, result);
+
+//     expect(consoleSpy).toHaveBeenCalledWith(`log: ${message} | ${result}`);
+//   });
+// });

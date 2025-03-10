@@ -7,6 +7,6 @@ export class LoggingService {
   constructor() {}
 
   logToConsole(message: string, result: number): void {
-    console.log(`LOG: ${message} = ${result}`);
+    console.log(`log: ${message} | ${result}`);
   }
 }

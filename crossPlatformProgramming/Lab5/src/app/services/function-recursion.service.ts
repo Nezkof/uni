@@ -20,7 +20,7 @@ export class FunctionRecursionService {
     let result = currentTerm + this.calculateRecursiveSeries(x, n + 1, terms);
 
     this.loggingService.logToConsole(
-      `n=${n}, x=${x}, term=${currentTerm}`,
+      `resursion: term = ${n}, x = ${x}`,
       result
     );
 

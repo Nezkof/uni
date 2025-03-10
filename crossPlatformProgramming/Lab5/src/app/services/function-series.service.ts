@@ -15,7 +15,7 @@ export class FunctionSeriesService {
       currentTerm *= x * x;
       sum -= currentTerm;
 
-      this.loggingService.logToConsole(`Term ${n} for x = ${x}`, sum);
+      this.loggingService.logToConsole(`series: term = ${n}, x = ${x}`, sum);
     }
 
     return sum;
