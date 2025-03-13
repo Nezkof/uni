@@ -52,15 +52,19 @@ export class Consultation implements IConsultation {
     return this.expert;
   }
 
-  getDetails(): string {
-    return `
-    <ul>
-      <li>Title: ${this.getTitle()}</li>
-      <li>Description: ${this.getDescription()}</li>
-      <li>Price: ${this.getPrice()}</li>
-      <li>Duration: ${this.getDuration()} hours</li>
-      <li>Expert: ${this.getExpert()} </li> 
-    </ul>
-  `;
+  getDetails(): {
+    title: string;
+    description: string;
+    price: number;
+    duration: number;
+    expert: string;
+  } {
+    return {
+      title: this.getTitle(),
+      description: this.getDescription(),
+      price: this.getPrice(),
+      duration: this.getDuration(),
+      expert: this.getExpert(),
+    };
   }
 }

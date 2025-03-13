@@ -43,14 +43,17 @@ export class Course implements ICourse {
     return this.duration;
   }
 
-  getDetails(): string {
-    return `
-     <ul>
-       <li>Title: ${this.getTitle()}</li>
-       <li>Description: ${this.getDescription()}</li>
-       <li>Price: $${this.getPrice()}</li>
-       <li>Duration: ${this.getDuration()} hours</li>
-     </ul>
-   `;
+  getDetails(): {
+    title: string;
+    description: string;
+    price: number;
+    duration: number;
+  } {
+    return {
+      title: this.getTitle(),
+      description: this.getDescription(),
+      price: this.getPrice(),
+      duration: this.getDuration(),
+    };
   }
 }

@@ -52,15 +52,19 @@ export class Training implements ITraining {
     return this.level;
   }
 
-  getDetails(): string {
-    return `
-    <ul>
-      <li>Title: ${this.getTitle()}</li>
-      <li>Description: ${this.getDescription()}</li>
-      <li>Price: $${this.getPrice()}</li>
-      <li>Duration: ${this.getDuration()} hours</li>
-      <li>Level: ${this.getLevel()}</li>
-    </ul>
-  `;
+  getDetails(): {
+    title: string;
+    description: string;
+    price: number;
+    duration: number;
+    level: string;
+  } {
+    return {
+      title: this.getTitle(),
+      description: this.getDescription(),
+      price: this.getPrice(),
+      duration: this.getDuration(),
+      level: this.getLevel(),
+    };
   }
 }

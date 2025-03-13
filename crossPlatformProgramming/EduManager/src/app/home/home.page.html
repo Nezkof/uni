@@ -7,9 +7,25 @@
 <ion-content>
   <ion-card *ngFor="let service of services">
     <ion-card-header>
-      <ion-card-title>{{service.getTitle()}}</ion-card-title>
+      <ion-card-title>{{ service.getTitle() }}</ion-card-title>
     </ion-card-header>
 
-    <ion-card-content [innerHTML]="service.getDetails()"></ion-card-content>
+    <ion-card-content>
+      <ul>
+        <li>Title: {{ service.getDetails().title }}</li>
+        <li>Description: {{ service.getDetails().description }}</li>
+        <li>Price: ${{ service.getDetails().price }}</li>
+        <li>Duration: {{ service.getDetails().duration }} hours</li>
+        <li *ngIf="service.getDetails().expert">
+          Expert: {{ service.getDetails().expert }}
+        </li>
+        <li *ngIf="service.getDetails().lector">
+          Lector: {{ service.getDetails().lector }}
+        </li>
+        <li *ngIf="service.getDetails().level">
+          Level: {{ service.getDetails().level }}
+        </li>
+      </ul>
+    </ion-card-content>
   </ion-card>
 </ion-content>

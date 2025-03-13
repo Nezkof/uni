@@ -4,5 +4,5 @@ export interface IService {
   getDescription(): string;
   getPrice(): number;
   getDuration(): number;
-  getDetails(): string;
+  getDetails(): any;
 }

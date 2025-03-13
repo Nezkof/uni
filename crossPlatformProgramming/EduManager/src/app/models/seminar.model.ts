@@ -52,15 +52,19 @@ export class Seminar implements IConsultation {
     return this.lector;
   }
 
-  getDetails(): string {
-    return `
-    <ul>
-      <li>Title: ${this.getTitle()}</li>
-      <li>Description: ${this.getDescription()}</li>
-      <li>Price: ${this.getPrice()}</li>
-      <li>Duration: ${this.getDuration()} hours</li>
-      <li>Expert: ${this.getLector()} </li> 
-    </ul>
-  `;
+  getDetails(): {
+    title: string;
+    description: string;
+    price: number;
+    duration: number;
+    lector: string;
+  } {
+    return {
+      title: this.getTitle(),
+      description: this.getDescription(),
+      price: this.getPrice(),
+      duration: this.getDuration(),
+      lector: this.getLector(),
+    };
   }
 }
