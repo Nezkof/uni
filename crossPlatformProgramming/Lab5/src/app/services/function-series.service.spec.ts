@@ -27,14 +27,12 @@ describe('FunctionSeriesService', () => {
   });
 
   it('should return correct value for calculateSeriesValue', () => {
-    const x = 2;
-    const terms = 3;
+    const x = -0.2;
+    const terms = 10;
 
-    // sum = -1 - 2^2 - 2^4 - 2^6
-    // -1 - 4 - 16 - 64 = -85
     const result = service.calculateSeriesValue(x, terms);
 
-    expect(result).toBe(-85);
+    expect(result).toBe(-1.0416666666666665);
   });
 
   it('should call loggingService.logToConsole correct number of times', () => {

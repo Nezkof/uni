@@ -3,7 +3,7 @@ import { IService } from './service.model';
 export interface ICourse extends IService {}
 
 export class Course implements ICourse {
-  private id: string;
+  public id: string;
   private title: string;
   private description: string;
   private price: number;
@@ -41,6 +41,10 @@ export class Course implements ICourse {
 
   getDuration(): number {
     return this.duration;
+  }
+
+  getType() {
+    return 'course';
   }
 
   getDetails(): {

@@ -5,7 +5,7 @@ export interface IConsultation extends IService {
 }
 
 export class Consultation implements IConsultation {
-  private id: string;
+  public id: string;
   private title: string;
   private description: string;
   private price: number;
@@ -50,6 +50,10 @@ export class Consultation implements IConsultation {
 
   getExpert(): string {
     return this.expert;
+  }
+
+  getType() {
+    return 'consultation';
   }
 
   getDetails(): {

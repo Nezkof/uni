@@ -5,7 +5,7 @@ export interface IConsultation extends IService {
 }
 
 export class Seminar implements IConsultation {
-  private id: string;
+  public id: string;
   private title: string;
   private description: string;
   private price: number;
@@ -50,6 +50,10 @@ export class Seminar implements IConsultation {
 
   getLector(): string {
     return this.lector;
+  }
+
+  getType() {
+    return 'seminar';
   }
 
   getDetails(): {

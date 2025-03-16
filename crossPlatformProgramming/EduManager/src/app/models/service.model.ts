@@ -1,8 +1,9 @@
 export interface IService {
-  getId(): string;
+  id: string;
   getTitle(): string;
   getDescription(): string;
   getPrice(): number;
   getDuration(): number;
   getDetails(): any;
+  getType(): string;
 }

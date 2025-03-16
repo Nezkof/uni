@@ -37,7 +37,6 @@ describe('FunctionTableService', () => {
   it('should call loggingService.logToConsole once', () => {
     service.calculate(0.2);
 
-    // Логування має відбутися один раз
     expect(loggingServiceSpy.logToConsole.calls.count()).toBe(1);
   });
 

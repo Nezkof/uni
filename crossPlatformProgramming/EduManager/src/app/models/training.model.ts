@@ -5,7 +5,7 @@ export interface ITraining extends IService {
 }
 
 export class Training implements ITraining {
-  private id: string;
+  public id: string;
   private title: string;
   private description: string;
   private price: number;
@@ -50,6 +50,10 @@ export class Training implements ITraining {
 
   getLevel(): string {
     return this.level;
+  }
+
+  getType() {
+    return 'training';
   }
 
   getDetails(): {
