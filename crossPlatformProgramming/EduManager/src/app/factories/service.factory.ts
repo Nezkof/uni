@@ -17,17 +17,7 @@ export enum ServiceType {
   providedIn: 'root',
 })
 export class ServiceFactory {
-  private servicesSubject = new BehaviorSubject<IService[]>([]);
-
-  get services$(): Observable<IService[]> {
-    return this.servicesSubject.asObservable();
-  }
-
-  addService(newService: IService) {
-    this.servicesSubject.next([...this.servicesSubject.getValue(), newService]);
-  }
-
-  createService(type: ServiceType, data: any): IService {
+  static createService(type: ServiceType, data: any): IService {
     let service: IService;
 
     switch (type) {
@@ -75,20 +65,5 @@ export class ServiceFactory {
     }
 
     return service;
-  }
-
-  updateService(updatedService: IService): void {
-    const services = this.servicesSubject.getValue();
-    const serviceIndex = services.findIndex(
-      (service) => service.id === updatedService.id
-    );
-
-    if (serviceIndex !== -1) {
-      services[serviceIndex] = updatedService;
-
-      this.servicesSubject.next([...services]);
-    } else {
-      console.warn('Service not found for update');
-    }
   }
 }

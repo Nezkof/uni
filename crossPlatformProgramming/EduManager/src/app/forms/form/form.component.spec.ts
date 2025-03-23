@@ -9,8 +9,7 @@ describe('FormComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [FormComponent],
-      imports: [IonicModule.forRoot()],
+      imports: [FormComponent, IonicModule.forRoot()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FormComponent);

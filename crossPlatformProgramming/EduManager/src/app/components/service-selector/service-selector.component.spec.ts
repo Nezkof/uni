@@ -1,18 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { EditFormComponent } from './edit-form.component';
+import { ServiceSelectorComponent } from './service-selector.component';
 
-describe('EditFormComponent', () => {
-  let component: EditFormComponent;
-  let fixture: ComponentFixture<EditFormComponent>;
+describe('ServiceSelectorComponent', () => {
+  let component: ServiceSelectorComponent;
+  let fixture: ComponentFixture<ServiceSelectorComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [EditFormComponent, IonicModule.forRoot()],
+      declarations: [ ServiceSelectorComponent ],
+      imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(EditFormComponent);
+    fixture = TestBed.createComponent(ServiceSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

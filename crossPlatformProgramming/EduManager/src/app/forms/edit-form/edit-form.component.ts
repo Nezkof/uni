@@ -11,6 +11,7 @@ import {
 import { ServiceFactory, ServiceType } from 'src/app/factories/service.factory';
 import { IService } from 'src/app/models/service.model';
 import { ServiceManager } from 'src/app/services/service-manager.service';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-edit-form',
@@ -27,8 +28,7 @@ export class EditFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private serviceFactory: ServiceFactory,
-    private serviceManager: ServiceManager
+    private userDataService: UserDataService
   ) {}
 
   ngOnInit() {
@@ -98,12 +98,11 @@ export class EditFormComponent implements OnInit {
 
       try {
         if (this.serviceToEdit) {
-          const updatedService: IService = this.serviceFactory.createService(
+          const updatedService: IService = ServiceFactory.createService(
             serviceType,
             updatedServiceData
           );
-
-          this.serviceManager.updateService(updatedService);
+          this.userDataService.updateService(updatedService);
         }
 
         this.serviceUpdated.emit(updatedServiceData);

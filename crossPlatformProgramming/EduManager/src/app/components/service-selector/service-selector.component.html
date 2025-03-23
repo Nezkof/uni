@@ -1,0 +1,21 @@
+<ion-card>
+  <ion-card-content>
+    <div class="horizontal-scroll">
+      <ion-button
+        *ngFor="let serviceType of (userData$ | async)?.serviceTypes"
+        (click)="onButtonClick(serviceType)"
+        [ngClass]="{ selected: selectedServiceTypes.includes(serviceType) }"
+      >
+        {{ serviceType }}
+      </ion-button>
+    </div>
+    <ion-item>
+      <ion-input
+        [(ngModel)]="searchText"
+        label="Введіть назву: "
+        placeholder="..."
+        (ionInput)="onSearchChange()"
+      ></ion-input>
+    </ion-item>
+  </ion-card-content>
+</ion-card>

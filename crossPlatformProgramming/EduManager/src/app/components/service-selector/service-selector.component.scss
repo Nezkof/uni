@@ -1,0 +1,15 @@
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+.horizontal-scroll ion-button {
+  flex: 0 0 auto;
+  margin-right: 10px;
+}
+
+.selected {
+  --background: #294685;
+}

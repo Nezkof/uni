@@ -5,11 +5,12 @@ import { IService } from '../models/service.model';
   providedIn: 'root',
 })
 export class CloudService {
-  private jsonUrl = 'https://api.jsonbin.io/v3/b/67ceef198561e97a50e96354';
+  private static jsonUrl =
+    'https://api.jsonbin.io/v3/b/67ceef198561e97a50e96354';
 
   constructor() {}
 
-  async loadServices(): Promise<IService[]> {
+  static async loadServices(): Promise<IService[]> {
     try {
       const response = await fetch(this.jsonUrl, {
         method: 'GET',
@@ -27,3 +28,5 @@ export class CloudService {
     }
   }
 }
+
+export default new CloudService();

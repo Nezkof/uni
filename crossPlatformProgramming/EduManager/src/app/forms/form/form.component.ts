@@ -15,7 +15,10 @@ import { PriceValidatorService } from 'src/app/services/price-validator.service'
 import { ServiceFactory, ServiceType } from 'src/app/factories/service.factory';
 
 import { IService } from 'src/app/models/service.model';
-import { ServiceManager } from 'src/app/services/service-manager.service';
+
+import { Firestore } from '@angular/fire/firestore';
+import { FirestoreService } from 'src/app/services/firestore.service';
+import { UserDataService } from 'src/app/services/user-data.service';
 
 @Component({
   selector: 'app-form',
@@ -34,7 +37,7 @@ export class FormComponent implements OnInit {
     private titleValidator: TitleValidatorService,
     private priceValidator: PriceValidatorService,
     private serviceFactory: ServiceFactory,
-    private serviceManager: ServiceManager
+    private userDataService: UserDataService
   ) {}
 
   ngOnInit() {
@@ -45,6 +48,15 @@ export class FormComponent implements OnInit {
       duration: [null, [Validators.required, Validators.min(1)]],
       type: ['Course'],
       additionalFields: this.fb.array([]),
+    });
+
+    this.courseForm.reset({
+      title: 'title',
+      description: 'description',
+      price: 1,
+      duration: 2,
+      type: 'Course',
+      additionalFields: [],
     });
 
     this.courseForm.get('type')?.valueChanges.subscribe((value) => {
@@ -84,7 +96,7 @@ export class FormComponent implements OnInit {
     }
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (this.courseForm.valid) {
       const formValue = this.courseForm.value;
       const serviceType = formValue.type.toLowerCase() as ServiceType;
@@ -97,12 +109,13 @@ export class FormComponent implements OnInit {
       };
 
       try {
-        const newService: IService = this.serviceFactory.createService(
+        const newService: IService = ServiceFactory.createService(
           serviceType,
           serviceData
         );
 
-        this.serviceManager.addService(newService);
+        this.userDataService.addService(newService);
+
         this.serviceCreated.emit(newService);
 
         this.courseForm.reset({
@@ -114,7 +127,7 @@ export class FormComponent implements OnInit {
           additionalFields: [],
         });
       } catch (error) {
-        console.error('Creation error:', error);
+        console.error('Error adding service to Firestore:', error);
       }
     } else {
       console.log('Form has errors:', this.courseForm.errors);

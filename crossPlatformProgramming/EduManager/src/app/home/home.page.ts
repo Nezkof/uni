@@ -1,48 +1,63 @@
 import { Component, OnDestroy, OnInit, Signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { IService } from '../models/service.model';
-import { CloudService } from '../services/cloud.service';
-import { ServiceFactory } from '../factories/service.factory';
 import { FormComponent } from '../forms/form/form.component';
-import { Observable, Subject, takeUntil } from 'rxjs';
 import { EditFormComponent } from '../forms/edit-form/edit-form.component';
-import { ServiceManager } from '../services/service-manager.service';
+import { ServiceSelectorComponent } from '../components/service-selector/service-selector.component';
+import { UserDataService } from '../services/user-data.service';
+import { map, Observable } from 'rxjs';
+import { IService } from '../models/service.model';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [CommonModule, IonicModule, FormComponent, EditFormComponent],
+  imports: [
+    CommonModule,
+    IonicModule,
+    FormComponent,
+    EditFormComponent,
+    ServiceSelectorComponent,
+  ],
 })
-export class HomePage implements OnDestroy {
-  private destroy$ = new Subject<void>();
+export class HomePage implements OnInit {
   services$: Observable<IService[]>;
-  selectedService: IService | null = null;
+  selectedServiceTypes!: string[];
+  searchText: string = '';
+  selectedService!: IService | null;
 
-  constructor(private serviceManager: ServiceManager) {
-    this.services$ = this.serviceManager.services$;
+  constructor(private userDataService: UserDataService) {
+    this.userDataService.getUserData$.subscribe((userData) => {
+      this.selectedServiceTypes = userData.selectedServiceTypes;
+      this.searchText = userData.inputFilter;
+      this.selectedService = userData.selectedService;
+    });
+
+    this.services$ = this.userDataService.getUserData$.pipe(
+      map((userData) => userData.services)
+    );
   }
 
-  ngOnDestroy() {
-    this.destroy$.next();
-    this.destroy$.complete();
+  filterServices(services: any[]): any[] {
+    if (!this.searchText.trim()) {
+      return services;
+    }
+
+    return services.filter((service) =>
+      service.title.toLowerCase().includes(this.searchText.toLowerCase())
+    );
   }
 
-  onSelectService(service: IService) {
-    this.selectedService = service;
+  ngOnInit(): void {}
+
+  onSelectService(service: IService): void {
+    this.userDataService.setSelectedService(service);
+    console.log('Service selected:', service);
   }
 
-  onServiceCreated(newService: IService) {
-    console.log('New service added:', newService);
-  }
-
-  onServiceUpdated(updatedService: IService) {
-    this.selectedService = null;
-  }
-
-  onDeleteService(service: IService) {
-    this.serviceManager.deleteService(service.id);
+  onDeleteService(service: IService): void {
+    console.log('Delete service:', service);
+    this.userDataService.deleteService(service);
   }
 }
