@@ -1,0 +1,30 @@
+<ion-card>
+  <ion-card-content>
+    <div class="horizontal-scroll">
+      <div *ngFor="let serviceType of (userData$ | async)?.serviceTypes">
+        <ion-button
+          (click)="onButtonClick(serviceType.getName())"
+          [ngClass]="{ selected: isServiceSelected(serviceType.getName()) }"
+        >
+          {{ serviceType.getName() }}
+        </ion-button>
+        <ion-button (click)="onUpdateServiceTypeButtonClick(serviceType)">
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="onDeleteServiceTypeButtonClick(serviceType)">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </div>
+
+      <ion-button (click)="onAddServiceTypeClick()"> + </ion-button>
+    </div>
+    <ion-item>
+      <ion-input
+        [(ngModel)]="searchText"
+        label="Введіть назву: "
+        placeholder="..."
+        (ionInput)="onSearchChange()"
+      ></ion-input>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
