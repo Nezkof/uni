@@ -27,7 +27,7 @@ export class EditFormComponent implements OnInit {
   @Output() serviceUpdated = new EventEmitter<IService>();
 
   editForm!: FormGroup;
-  selectedType: ServiceType | null = null;
+  selectedType: string | null = null;
 
   userId: string | null = null;
   userData: UserData | null = null;
@@ -65,7 +65,7 @@ export class EditFormComponent implements OnInit {
     this.toggleFields();
 
     this.editForm.get('type')?.valueChanges.subscribe((value) => {
-      this.selectedType = value;
+      this.selectedType = value.getName().toLowerCase();
       this.toggleFields();
     });
   }
@@ -78,19 +78,19 @@ export class EditFormComponent implements OnInit {
     const type = this.selectedType;
     this.additionalFields.clear();
 
-    if (type?.getName() === 'Consultation') {
+    if (type === 'consultation') {
       this.additionalFields.push(
         this.fb.group({
           expert: ['', [Validators.required, Validators.minLength(1)]],
         })
       );
-    } else if (type?.getName() === 'Seminar') {
+    } else if (type === 'seminar') {
       this.additionalFields.push(
         this.fb.group({
           lector: ['', [Validators.required, Validators.minLength(1)]],
         })
       );
-    } else if (type?.getName() === 'Training') {
+    } else if (type === 'training') {
       this.additionalFields.push(
         this.fb.group({
           level: ['', [Validators.required, Validators.minLength(1)]],

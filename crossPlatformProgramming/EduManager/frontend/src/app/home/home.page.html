@@ -2,7 +2,9 @@
   <ion-toolbar>
     <div class="horizontal">
       <ion-title>Educational Services</ion-title>
-      <ion-button (click)="login()">Login</ion-button>
+      <ion-button (click)="login()">
+        {{ isLogged() ? 'Logout' : 'Login' }}
+      </ion-button>
     </div>
   </ion-toolbar>
 </ion-header>

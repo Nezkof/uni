@@ -80,9 +80,7 @@ export class ServiceSelectorComponent implements OnInit {
     this.userDataService.setInputFilter(this.searchText);
   }
 
-  ngOnInit() {
-    console.log('ServiceSelectorComponent ngOnInit called');
-  }
+  ngOnInit() {}
 
   onButtonClick(service: string) {
     this.userDataService.setSelectedServiceType(service);

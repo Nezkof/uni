@@ -80,4 +80,8 @@ export class HomePage implements OnInit {
   logout() {
     this.userDataService.logoutUser();
   }
+
+  isLogged() {
+    return !!this.userDataService.getUserSubject().value;
+  }
 }

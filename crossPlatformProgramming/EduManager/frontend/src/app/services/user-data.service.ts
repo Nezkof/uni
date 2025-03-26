@@ -7,7 +7,6 @@ import { AuthService } from './auth.service';
 import { ServiceType } from '../models/serviceType.model';
 
 export interface UserData {
-  //   user: string | null;
   serviceTypes: ServiceType[];
   selectedServiceTypes: string[];
   services: IService[];
@@ -19,7 +18,9 @@ export interface UserData {
   providedIn: 'root',
 })
 export class UserDataService {
-  private userSubject = new BehaviorSubject<string | null>(null);
+  private userSubject = new BehaviorSubject<string | null>(
+    'rpdijm9QSscPeQLv3hL6vrzxbj13'
+  );
 
   private userDataSubject = new BehaviorSubject<UserData>({
     serviceTypes: [],
