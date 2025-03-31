@@ -12,6 +12,7 @@ export class Consultation implements IConsultation {
   private price: number;
   private duration: number;
   private expert: string;
+  private rating: number;
   private type: string;
 
   constructor(
@@ -22,7 +23,8 @@ export class Consultation implements IConsultation {
     price: number,
     duration: number,
     expert: string,
-    type: string
+    type: string,
+    rating: number
   ) {
     this.id = id;
     this.userId = userId;
@@ -32,6 +34,11 @@ export class Consultation implements IConsultation {
     this.duration = duration;
     this.expert = expert;
     this.type = type;
+    this.rating = rating;
+  }
+
+  getRating(): number {
+    return this.rating;
   }
 
   getId(): string {
@@ -72,6 +79,7 @@ export class Consultation implements IConsultation {
     price: number;
     duration: number;
     expert: string;
+    rating: number;
   } {
     return {
       title: this.getTitle(),
@@ -79,6 +87,7 @@ export class Consultation implements IConsultation {
       price: this.getPrice(),
       duration: this.getDuration(),
       expert: this.getExpert(),
+      rating: this.getRating(),
     };
   }
 }

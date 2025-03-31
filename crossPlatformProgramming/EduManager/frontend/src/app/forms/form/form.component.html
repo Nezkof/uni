@@ -55,6 +55,15 @@
         </ion-text>
 
         <ion-item>
+          <ion-input
+            label="Рейтинг"
+            placeholder="..."
+            type="number"
+            formControlName="rating"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
           <ion-label>Course type:</ion-label>
           <ion-select formControlName="type" placeholder="Оберіть категорію">
             <ng-container *ngFor="let serviceType of userData?.serviceTypes">

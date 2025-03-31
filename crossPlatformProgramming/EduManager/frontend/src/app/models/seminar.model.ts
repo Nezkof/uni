@@ -13,6 +13,7 @@ export class Seminar implements IConsultation {
   private duration: number;
   private lector: string;
   private type: string;
+  private rating: number;
 
   constructor(
     id: string,
@@ -22,7 +23,8 @@ export class Seminar implements IConsultation {
     price: number,
     duration: number,
     expert: string,
-    type: string
+    type: string,
+    rating: number
   ) {
     this.id = id;
     this.userId = userId;
@@ -32,6 +34,11 @@ export class Seminar implements IConsultation {
     this.duration = duration;
     this.lector = expert;
     this.type = type;
+    this.rating = rating;
+  }
+
+  getRating(): number {
+    return this.rating;
   }
 
   setType(type: string) {
@@ -72,6 +79,7 @@ export class Seminar implements IConsultation {
     price: number;
     duration: number;
     lector: string;
+    rating: number;
   } {
     return {
       title: this.getTitle(),
@@ -79,6 +87,7 @@ export class Seminar implements IConsultation {
       price: this.getPrice(),
       duration: this.getDuration(),
       lector: this.getLector(),
+      rating: this.getRating(),
     };
   }
 }

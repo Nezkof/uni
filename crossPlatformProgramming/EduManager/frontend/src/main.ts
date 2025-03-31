@@ -20,11 +20,18 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideAuth } from '@angular/fire/auth';
 import { getAuth } from 'firebase/auth';
 import { addIcons } from 'ionicons';
-import { createOutline, trashOutline } from 'ionicons/icons';
+import {
+  arrowDownOutline,
+  arrowUpOutline,
+  createOutline,
+  trashOutline,
+} from 'ionicons/icons';
 
 addIcons({
   'create-outline': createOutline,
   'trash-outline': trashOutline,
+  'arrow-down-outline': arrowDownOutline,
+  'arrow-up-outline': arrowUpOutline,
 });
 
 bootstrapApplication(AppComponent, {

@@ -25,6 +25,8 @@ export class ServiceFactory {
   ): IService {
     let service: IService;
 
+    console.log(data);
+
     switch (type) {
       case ServiceTypeEnum.Course:
         service = new Course(
@@ -34,7 +36,8 @@ export class ServiceFactory {
           data.description,
           data.price,
           data.duration,
-          type
+          type,
+          data.rating
         );
         break;
       case ServiceTypeEnum.Training:
@@ -46,7 +49,8 @@ export class ServiceFactory {
           data.price,
           data.duration,
           data.level,
-          type
+          type,
+          data.rating
         );
         break;
       case ServiceTypeEnum.Consultation:
@@ -58,7 +62,8 @@ export class ServiceFactory {
           data.price,
           data.duration,
           data.expert,
-          type
+          type,
+          data.rating
         );
         break;
       case ServiceTypeEnum.Seminar:
@@ -70,7 +75,8 @@ export class ServiceFactory {
           data.price,
           data.duration,
           data.lector,
-          type
+          type,
+          data.rating
         );
         break;
       default:
@@ -81,7 +87,8 @@ export class ServiceFactory {
           data.description,
           data.price,
           data.duration,
-          type
+          type,
+          data.rating
         );
     }
 

@@ -10,6 +10,7 @@ export class Default implements ICourse {
   private price: number;
   private duration: number;
   private type: string;
+  private rating: number;
 
   constructor(
     id: string,
@@ -18,7 +19,8 @@ export class Default implements ICourse {
     description: string,
     price: number,
     duration: number,
-    type: string
+    type: string,
+    rating: number
   ) {
     this.id = id;
     this.userId = userId;
@@ -27,6 +29,11 @@ export class Default implements ICourse {
     this.price = price;
     this.duration = duration;
     this.type = type;
+    this.rating = rating;
+  }
+
+  getRating(): number {
+    return this.rating;
   }
 
   setType(type: string) {
@@ -62,12 +69,14 @@ export class Default implements ICourse {
     description: string;
     price: number;
     duration: number;
+    rating: number;
   } {
     return {
       title: this.getTitle(),
       description: this.getDescription(),
       price: this.getPrice(),
       duration: this.getDuration(),
+      rating: this.getRating(),
     };
   }
 }

@@ -9,6 +9,7 @@ export class Course implements ICourse {
   private description: string;
   private price: number;
   private duration: number;
+  private rating: number;
   private type: string;
 
   constructor(
@@ -18,7 +19,8 @@ export class Course implements ICourse {
     description: string,
     price: number,
     duration: number,
-    type: string
+    type: string,
+    rating: number
   ) {
     this.id = id;
     this.userId = userId;
@@ -26,7 +28,12 @@ export class Course implements ICourse {
     this.description = description;
     this.price = price;
     this.duration = duration;
+    this.rating = rating;
     this.type = type;
+  }
+
+  getRating(): number {
+    return this.rating;
   }
 
   setType(type: string) {
@@ -62,12 +69,14 @@ export class Course implements ICourse {
     description: string;
     price: number;
     duration: number;
+    rating: number;
   } {
     return {
       title: this.getTitle(),
       description: this.getDescription(),
       price: this.getPrice(),
       duration: this.getDuration(),
+      rating: this.getRating(),
     };
   }
 }

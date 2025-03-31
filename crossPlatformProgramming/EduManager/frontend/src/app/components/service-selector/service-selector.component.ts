@@ -8,12 +8,20 @@ import { IService } from 'src/app/models/service.model';
 import { ServiceType } from 'src/app/models/serviceType.model';
 import { UserDataService } from 'src/app/services/user-data.service';
 import { AlertController } from '@ionic/angular';
+import { SortByRatingPipe } from 'src/app/pipes/sort-by-rating.pipe';
+import { SortingService } from 'src/app/services/sorting.service';
 
 @Component({
   selector: 'app-service-selector',
   templateUrl: './service-selector.component.html',
   styleUrls: ['./service-selector.component.scss'],
-  imports: [IonicModule, ReactiveFormsModule, CommonModule, FormsModule],
+  imports: [
+    IonicModule,
+    ReactiveFormsModule,
+    CommonModule,
+    FormsModule,
+    SortByRatingPipe,
+  ],
 })
 export class ServiceSelectorComponent implements OnInit {
   userData$: Observable<any>;
@@ -22,12 +30,17 @@ export class ServiceSelectorComponent implements OnInit {
 
   constructor(
     private userDataService: UserDataService,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private sortingService: SortingService
   ) {
     this.userData$ = this.userDataService.getUserData$;
     this.userDataService.getUserData$.subscribe((userData) => {
       this.selectedServiceTypes = userData.selectedServiceTypes;
     });
+  }
+
+  setAscending(isAscending: boolean) {
+    this.sortingService.setSorting(isAscending);
   }
 
   onAddServiceTypeClick() {

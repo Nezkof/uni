@@ -7,5 +7,6 @@ export interface IService {
   getDuration(): number;
   getDetails(): any;
   getType(): string;
+  getRating(): number;
   setType(type: string): void;
 }

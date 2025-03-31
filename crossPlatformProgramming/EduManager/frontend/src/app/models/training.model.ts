@@ -13,6 +13,7 @@ export class Training implements ITraining {
   private duration: number;
   private level: string;
   private type: string;
+  private rating: number;
 
   constructor(
     id: string,
@@ -22,7 +23,8 @@ export class Training implements ITraining {
     price: number,
     duration: number,
     level: string,
-    type: string
+    type: string,
+    rating: number
   ) {
     this.id = id;
     this.userId = userId;
@@ -32,6 +34,11 @@ export class Training implements ITraining {
     this.duration = duration;
     this.level = level;
     this.type = type;
+    this.rating = rating;
+  }
+
+  getRating(): number {
+    return this.rating;
   }
 
   getId(): string {
@@ -72,6 +79,7 @@ export class Training implements ITraining {
     price: number;
     duration: number;
     level: string;
+    rating: number;
   } {
     return {
       title: this.getTitle(),
@@ -79,6 +87,7 @@ export class Training implements ITraining {
       price: this.getPrice(),
       duration: this.getDuration(),
       level: this.getLevel(),
+      rating: this.getRating(),
     };
   }
 }

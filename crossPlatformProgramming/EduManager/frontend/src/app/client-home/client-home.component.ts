@@ -1,37 +1,44 @@
-import { Component, OnDestroy, OnInit, Signal, computed } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserDataService } from '../services/user-data.service';
+import { IService } from '../models/service.model';
+import { combineLatest, map, Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { FormComponent } from '../forms/form/form.component';
-import { EditFormComponent } from '../forms/edit-form/edit-form.component';
 import { ServiceSelectorComponent } from '../components/service-selector/service-selector.component';
-import { UserDataService } from '../services/user-data.service';
-import { combineLatest, map, Observable } from 'rxjs';
-import { IService } from '../models/service.model';
+import { EditFormComponent } from '../forms/edit-form/edit-form.component';
+import { FormComponent } from '../forms/form/form.component';
+import { SortByRatingPipe } from '../pipes/sort-by-rating.pipe';
+import { SortingService } from '../services/sorting.service';
+import { DurationPipe } from '../pipes/duration.pipe';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-client-home',
+  templateUrl: './client-home.component.html',
+  styleUrls: ['./client-home.component.scss'],
   imports: [
     CommonModule,
     IonicModule,
     FormComponent,
     EditFormComponent,
     ServiceSelectorComponent,
+    SortByRatingPipe,
+    DurationPipe,
   ],
+  standalone: true,
 })
-export class HomePage implements OnInit {
+export class ClientHomeComponent implements OnInit {
   services$: Observable<IService[]>;
   selectedServiceTypes!: string[];
   searchText: string = '';
-  selectedService!: IService | null;
 
-  constructor(private userDataService: UserDataService) {
-    this.userDataService.getUserData$.subscribe((userData) => {
-      this.selectedServiceTypes = userData.selectedServiceTypes;
-      this.searchText = userData.inputFilter;
-      this.selectedService = userData.selectedService;
+  isAscending: boolean = true;
+
+  constructor(
+    private userDataService: UserDataService,
+    private sortingService: SortingService
+  ) {
+    this.sortingService.isAscending$.subscribe((isAscending) => {
+      this.isAscending = isAscending;
     });
 
     this.services$ = combineLatest([this.userDataService.getUserData$]).pipe(
@@ -60,17 +67,7 @@ export class HomePage implements OnInit {
     );
   }
 
-  ngOnInit(): void {}
-
-  onSelectService(service: IService): void {
-    this.userDataService.setSelectedService(service);
-    console.log('Service selected:', service);
-  }
-
-  onDeleteService(service: IService): void {
-    console.log('Delete service:', service);
-    this.userDataService.deleteService(service);
-  }
+  ngOnInit() {}
 
   login() {
     this.userDataService.loginUser();

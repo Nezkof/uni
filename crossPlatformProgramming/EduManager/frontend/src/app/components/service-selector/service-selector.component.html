@@ -18,6 +18,17 @@
 
       <ion-button (click)="onAddServiceTypeClick()"> + </ion-button>
     </div>
+
+    <div class="horizontal-scroll">
+      <ion-button (click)="setAscending(true)">
+        <ion-icon name="arrow-down-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button (click)="setAscending(false)">
+        <ion-icon name="arrow-up-outline"></ion-icon>
+      </ion-button>
+    </div>
+
     <ion-item>
       <ion-input
         [(ngModel)]="searchText"

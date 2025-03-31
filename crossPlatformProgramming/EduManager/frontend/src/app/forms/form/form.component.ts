@@ -61,6 +61,7 @@ export class FormComponent implements OnInit {
       price: [null, this.priceValidator.validatePrice()],
       duration: [null, [Validators.required, Validators.min(1)]],
       type: null,
+      rating: null,
       additionalFields: this.fb.array([]),
     });
 
@@ -114,6 +115,8 @@ export class FormComponent implements OnInit {
   async onSubmit() {
     if (this.courseForm.valid && this.userId) {
       const formValue = this.courseForm.value;
+
+      console.log('formValue', formValue);
 
       const serviceType = formValue.type?.getName().toLowerCase();
 

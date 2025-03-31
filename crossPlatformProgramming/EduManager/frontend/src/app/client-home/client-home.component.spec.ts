@@ -1,18 +1,17 @@
 // import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-// import { IonicModule } from '@ionic/angular';
 
-// import { EditFormComponent } from './edit-form.component';
+// import { ClientHomeComponent } from './client-home.component';
 
-// describe('EditFormComponent', () => {
-//   let component: EditFormComponent;
-//   let fixture: ComponentFixture<EditFormComponent>;
+// describe('ClientHomeComponent', () => {
+//   let component: ClientHomeComponent;
+//   let fixture: ComponentFixture<ClientHomeComponent>;
 
 //   beforeEach(waitForAsync(() => {
 //     TestBed.configureTestingModule({
-//       imports: [EditFormComponent, IonicModule.forRoot()],
+//       imports: [ClientHomeComponent],
 //     }).compileComponents();
 
-//     fixture = TestBed.createComponent(EditFormComponent);
+//     fixture = TestBed.createComponent(ClientHomeComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   }));

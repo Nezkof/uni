@@ -3,7 +3,7 @@
     <div class="horizontal">
       <ion-title>Educational Services</ion-title>
       <ion-button (click)="login()">
-        {{ isLogged() ? 'Logout' : 'Login' }}
+        {{ isLogged() ? "Logout" : "Login" }}
       </ion-button>
     </div>
   </ion-toolbar>
@@ -12,22 +12,18 @@
 <ion-content>
   <app-service-selector></app-service-selector>
 
-  <app-form></app-form>
-  <app-edit-form *ngIf="selectedService" [serviceToEdit]="selectedService">
-  </app-edit-form>
-
   <ul *ngIf="services$ | async as services">
-    <li *ngFor="let service of services">
+    <li *ngFor="let service of services | sortByRatingPipe : isAscending">
       <ion-card *ngIf="service">
         <ion-card-header>
           <ion-card-title>{{ service.getTitle() }}</ion-card-title>
         </ion-card-header>
 
         <ion-card-content>
-          <ul (click)="onSelectService(service)">
+          <ul>
             <li>{{ service.getDescription() }}</li>
             <li>Ціна: {{ service.getPrice() }}</li>
-            <li>Тривалість: {{ service.getDuration() }}</li>
+            <li>Тривалість: {{ service.getDuration() | duration }}</li>
 
             <li *ngIf="service.hasOwnProperty('expert')">
               <p>Експерт: {{ service.getDetails().expert }}</p>
@@ -45,7 +41,6 @@
               <p>Рейтинг: {{ service.getDetails().rating }}</p>
             </li>
           </ul>
-          <ion-button (click)="onDeleteService(service)">Видалити</ion-button>
         </ion-card-content>
       </ion-card>
     </li>
