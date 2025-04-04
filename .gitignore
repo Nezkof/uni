@@ -35,3 +35,7 @@ yarn-error.log*
 *.pdf
 /Practice
 /OOAD
+/crossPlatformProgramming/IT/obj
+/crossPlatformProgramming/IT/bin
+/crossPlatformProgramming/IT/Platforms
+/crossPlatformProgramming/IT/Resources

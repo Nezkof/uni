@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:IT.ViewModels"
+             x:Class="IT.SecondaryPage">
+
+    <ContentPage.BindingContext>
+        <vm:SecondaryViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Введіть три числа" FontSize="20" />
+
+        <Entry Text="{Binding Num1}" Placeholder="Число 1" Keyboard="Numeric"/>
+        <Entry Text="{Binding Num2}" Placeholder="Число 2" Keyboard="Numeric"/>
+        <Entry Text="{Binding Num3}" Placeholder="Число 3" Keyboard="Numeric"/>
+
+        <Button Text="Обчислити" Command="{Binding CalculateCommand}"/>
+
+        <Label Text="{Binding Count, StringFormat='Кількість чисел, які кратні 44: {0}'}" FontSize="18" TextColor="White"/>
+
+        <Button Text="Перейти до завдання №1" Clicked="OnNavigateToMainPage"/>
+    </VerticalStackLayout>
+
+</ContentPage>

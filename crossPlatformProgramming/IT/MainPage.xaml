@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:IT.ViewModels"
+             x:Class="IT.MainPage">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel></vm:MainViewModel>
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Введіть a та b" FontSize="20" />
+
+        <Entry Text="{Binding InputA}" Placeholder="Введіть a" Keyboard="Numeric"/>
+        <Entry Text="{Binding InputB}" Placeholder="Введіть b" Keyboard="Numeric"/>
+
+        <Button Text="Обчислити" Command="{Binding CalculateCommand}"/>
+
+        <Label Text="{Binding Result}" FontSize="18" TextColor="White"/>
+
+        <Button Text="Перейти до завдання №2" Clicked="OnNavigateToSecondaryPage"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>
