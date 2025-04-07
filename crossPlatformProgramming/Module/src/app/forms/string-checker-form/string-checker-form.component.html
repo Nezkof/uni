@@ -1,0 +1,17 @@
+<ion-card>
+  <form (ngSubmit)="submit()" [formGroup]="myForm">
+    <ion-item>
+      <ion-input
+        label="Текст для аналізу"
+        formControlName="textControl"
+        placeholder="Введіть текст..."
+      ></ion-input>
+    </ion-item>
+
+    <ion-text color="danger" *ngIf="isFieldInvalid('textControl')">
+      Текст повинен бути не менше одного символа
+    </ion-text>
+
+    <ion-button type="submit">Аналізувати</ion-button>
+  </form>
+</ion-card>

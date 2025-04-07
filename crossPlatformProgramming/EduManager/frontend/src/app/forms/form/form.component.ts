@@ -158,6 +158,7 @@ export class FormComponent implements OnInit {
     const control =
       this.courseForm.get(controlName) ||
       this.additionalFields.controls[0]?.get(controlName);
+
     return !!(control && control.invalid && (control.dirty || control.touched));
   }
 }

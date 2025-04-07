@@ -1,0 +1,9 @@
+<div *ngIf="chartData.labels.length > 0">
+  <canvas
+    baseChart
+    [data]="chartData"
+    [options]="chartOptions"
+    [type]="chartType"
+  ></canvas>
+</div>
+<div *ngIf="chartData.labels.length === 0">Дані відсутні</div>
