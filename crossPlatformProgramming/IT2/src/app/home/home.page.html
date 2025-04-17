@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> IT2 | Koshulko </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col><strong>Client ID</strong></ion-col>
+        <ion-col><strong>Name</strong></ion-col>
+        <ion-col><strong>Surname</strong></ion-col>
+        <ion-col><strong>Email</strong></ion-col>
+      </ion-row>
+
+      <ion-row *ngFor="let client of clients">
+        <ion-col>{{ client.client_id }}</ion-col>
+        <ion-col>{{ client.name }}</ion-col>
+        <ion-col>{{ client.surname }}</ion-col>
+        <ion-col>{{ client.email }}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

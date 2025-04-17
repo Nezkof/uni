@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\Study\\KNU\\3 Course\\2 Semester\\crossPlatformProgramming\\IT\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{55B3A761-BF20-4750-ABD4-5A87578F4824}|IT.csproj|d:\\study\\knu\\3 course\\2 semester\\crossplatformprogramming\\it\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{55B3A761-BF20-4750-ABD4-5A87578F4824}|IT.csproj|solutionrelative:mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{55B3A761-BF20-4750-ABD4-5A87578F4824}|IT.csproj|d:\\study\\knu\\3 course\\2 semester\\crossplatformprogramming\\it\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55B3A761-BF20-4750-ABD4-5A87578F4824}|IT.csproj|solutionrelative:viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55B3A761-BF20-4750-ABD4-5A87578F4824}|IT.csproj|d:\\study\\knu\\3 course\\2 semester\\crossplatformprogramming\\it\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{55B3A761-BF20-4750-ABD4-5A87578F4824}|IT.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{55B3A761-BF20-4750-ABD4-5A87578F4824}|IT.csproj|d:\\study\\knu\\3 course\\2 semester\\crossplatformprogramming\\it\\viewmodels\\secondaryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55B3A761-BF20-4750-ABD4-5A87578F4824}|IT.csproj|solutionrelative:viewmodels\\secondaryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55B3A761-BF20-4750-ABD4-5A87578F4824}|IT.csproj|d:\\study\\knu\\3 course\\2 semester\\crossplatformprogramming\\it\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{55B3A761-BF20-4750-ABD4-5A87578F4824}|IT.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{55B3A761-BF20-4750-ABD4-5A87578F4824}|IT.csproj|d:\\study\\knu\\3 course\\2 semester\\crossplatformprogramming\\it\\secondarypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{55B3A761-BF20-4750-ABD4-5A87578F4824}|IT.csproj|solutionrelative:secondarypage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55B3A761-BF20-4750-ABD4-5A87578F4824}|IT.csproj|d:\\study\\knu\\3 course\\2 semester\\crossplatformprogramming\\it\\secondarypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55B3A761-BF20-4750-ABD4-5A87578F4824}|IT.csproj|solutionrelative:secondarypage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "D:\\Study\\KNU\\3 Course\\2 Semester\\crossPlatformProgramming\\IT\\MainPage.xaml",
-              "RelativeDocumentMoniker": "MainPage.xaml",
-              "ToolTip": "D:\\Study\\KNU\\3 Course\\2 Semester\\crossPlatformProgramming\\IT\\MainPage.xaml",
-              "RelativeToolTip": "MainPage.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-04T17:35:34.908Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AppShell.xaml",
-              "DocumentMoniker": "D:\\Study\\KNU\\3 Course\\2 Semester\\crossPlatformProgramming\\IT\\AppShell.xaml",
-              "RelativeDocumentMoniker": "AppShell.xaml",
-              "ToolTip": "D:\\Study\\KNU\\3 Course\\2 Semester\\crossPlatformProgramming\\IT\\AppShell.xaml",
-              "RelativeToolTip": "AppShell.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvw8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-04T17:35:21.763Z",
+              "Title": "SecondaryViewModel.cs",
+              "DocumentMoniker": "D:\\Study\\KNU\\3 Course\\2 Semester\\crossPlatformProgramming\\IT\\ViewModels\\SecondaryViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\SecondaryViewModel.cs",
+              "ToolTip": "D:\\Study\\KNU\\3 Course\\2 Semester\\crossPlatformProgramming\\IT\\ViewModels\\SecondaryViewModel.cs",
+              "RelativeToolTip": "ViewModels\\SecondaryViewModel.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAE0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T06:39:19.775Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "App.xaml",
-              "DocumentMoniker": "D:\\Study\\KNU\\3 Course\\2 Semester\\crossPlatformProgramming\\IT\\App.xaml",
-              "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "D:\\Study\\KNU\\3 Course\\2 Semester\\crossPlatformProgramming\\IT\\App.xaml",
-              "RelativeToolTip": "App.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvw4AAAAAAAAA",
+              "Title": "SecondaryPage.xaml",
+              "DocumentMoniker": "D:\\Study\\KNU\\3 Course\\2 Semester\\crossPlatformProgramming\\IT\\SecondaryPage.xaml",
+              "RelativeDocumentMoniker": "SecondaryPage.xaml",
+              "ToolTip": "D:\\Study\\KNU\\3 Course\\2 Semester\\crossPlatformProgramming\\IT\\SecondaryPage.xaml",
+              "RelativeToolTip": "SecondaryPage.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-04T17:34:39.611Z",
+              "WhenOpened": "2025-04-09T06:38:57.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SecondaryPage.xaml.cs",
+              "DocumentMoniker": "D:\\Study\\KNU\\3 Course\\2 Semester\\crossPlatformProgramming\\IT\\SecondaryPage.xaml.cs",
+              "RelativeDocumentMoniker": "SecondaryPage.xaml.cs",
+              "ToolTip": "D:\\Study\\KNU\\3 Course\\2 Semester\\crossPlatformProgramming\\IT\\SecondaryPage.xaml.cs",
+              "RelativeToolTip": "SecondaryPage.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T06:38:56.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "D:\\Study\\KNU\\3 Course\\2 Semester\\crossPlatformProgramming\\IT\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MainViewModel.cs",
+              "ToolTip": "D:\\Study\\KNU\\3 Course\\2 Semester\\crossPlatformProgramming\\IT\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MainViewModel.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAA/wD4AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T06:38:15.238Z",
               "EditorCaption": ""
             }
           ]
