@@ -1,0 +1,32 @@
+﻿<Window x:Class="MVVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:MVVM.ViewModels"
+        Title="Розрахунок знижки" Height="250" Width="400">
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Ціна товару:" Width="100" VerticalAlignment="Center"/>
+            <TextBox Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBlock Text="Кількість:" Width="100" VerticalAlignment="Center"/>
+            <TextBox Text="{Binding Quantity, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock Text="Знижка:" Width="100" VerticalAlignment="Center"/>
+            <TextBlock Text="{Binding Discount, StringFormat=0.00}" Width="200" VerticalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -2,7 +2,7 @@ import { describe, expect, test } from "vitest";
 import { RobotCleaner } from "../classes/RobotCleaner";
 
 describe("Robot", () => {
-   test("Robot have to moving", () => {
+   test("Robot have to move", () => {
       const robot = new RobotCleaner();
       expect(robot.move()).toBe("Robot is moving");
    });
@@ -15,9 +15,7 @@ describe("Robot", () => {
 
    test("Negative damage error", () => {
       const robot = new RobotCleaner();
-      expect(() => robot.takeDamage(-30)).toThrow(
-         new Error("Damage cannot be negative")
-      );
+      expect(() => robot.takeDamage(-30)).toThrow(new Error("Damage cannot be negative"));
    });
 
    test("Damage reduces health correctly", () => {
@@ -35,9 +33,7 @@ describe("Robot", () => {
 
    test("Negative repair points error", () => {
       const robot = new RobotCleaner();
-      expect(() => robot.repair(-30)).toThrow(
-         new Error("Repair points cannot be negative")
-      );
+      expect(() => robot.repair(-30)).toThrow(new Error("Repair points cannot be negative"));
    });
 
    test("Correctly repairing", () => {
